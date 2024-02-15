@@ -2,6 +2,7 @@ import { NavLink, Outlet, useLocation } from "react-router-dom";
 import React, { useState } from "react";
 import { useMediaQueries } from "../hooks/getWindowSize";
 import IanBrvLogo from "../assets/ianbrv-logo.webp";
+import useMediaSize from "../hooks/useMediaSize";
 
 export default function Header() {
   const { pathname } = useLocation();
@@ -136,7 +137,12 @@ export default function Header() {
 
             <div className="top-right-header-mobile">
               <div className="logo-text">
-                <img src={IanBrvLogo} alt="Alessandro Bravi ianBrv" />
+                <img
+                  loading="lazy"
+                  preload="auto"
+                  src={IanBrvLogo}
+                  alt="Alessandro Bravi ianBrv"
+                />
               </div>
               <p>
                 Born in Urbino (ITA) 1998 <br></br>

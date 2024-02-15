@@ -4,6 +4,7 @@ import { useMediaQueries } from "../hooks/getWindowSize";
 import AboutImgWEB from "../assets/Alessandro Bravi About WEB.webp";
 import AboutImgPNG from "../assets/Alessandro Bravi About PNG.png";
 import IanBrvLogo from "../assets/ianbrv-logo.webp";
+import useMediaSize from "../hooks/useMediaSize";
 
 export default function About() {
   const { isDesktopOrLaptop, isTabletOrMobile } = useMediaQueries();
@@ -17,18 +18,28 @@ export default function About() {
         >
           <section className="full-col flex">
             <div id="aboutImg">
-              <picture alt="Alessandro Bravi ianBrv">
+              <picture
+                loading="lazy"
+                preload="auto"
+                alt="Alessandro Bravi ianBrv"
+              >
                 <source
+                  loading="lazy"
+                  preload="auto"
                   srcset={AboutImgWEB}
                   alt="Alessandro Bravi ianBrv"
                   type="image/webp"
                 />
                 <source
+                  loading="lazy"
+                  preload="auto"
                   srcset={AboutImgPNG}
                   alt="Alessandro Bravi ianBrv"
                   type="image/png"
                 />
                 <img
+                  loading="lazy"
+                  preload="auto"
                   src={AboutImgWEB}
                   alt="Alessandro Bravi ianBrv"
                   type="image/webp"
@@ -42,7 +53,12 @@ export default function About() {
                 style={{ marginBottom: "8vh" }}
               >
                 <div className="logo-text">
-                  <img src={IanBrvLogo} alt="Alessandro Bravi ianBrv" />
+                  <img
+                    loading="lazy"
+                    preload="auto"
+                    src={IanBrvLogo}
+                    alt="Alessandro Bravi ianBrv"
+                  />
                 </div>
                 <p>{new Date().getFullYear()}</p>
               </div>
@@ -86,19 +102,29 @@ export default function About() {
         <main>
           <section className="flex-col about">
             <div id="aboutImg">
-              <picture alt="Alessandro Bravi ianBrv">
+              <picture
+                loading="lazy"
+                preload="auto"
+                alt="Alessandro Bravi ianBrv"
+              >
                 <source
+                  loading="lazy"
+                  preload="auto"
                   srcset={AboutImgWEB}
                   alt="Alessandro Bravi ianBrv"
                   type="image/webp"
                 />
                 <source
+                  loading="lazy"
+                  preload="auto"
                   srcset={AboutImgPNG}
                   alt="Alessandro Bravi ianBrv"
                   type="image/png"
                 />
                 <img
-                  src={AboutImgPNG}
+                  loading="lazy"
+                  preload="auto"
+                  src={AboutImgWEB}
                   alt="Alessandro Bravi ianBrv"
                   type="image/webp"
                 />
@@ -107,7 +133,12 @@ export default function About() {
             <div className="flex-col small-gap" style={{ marginTop: "3vh" }}>
               <div className="flex justify-content-btw ">
                 <div className="logo-text">
-                  <img src={IanBrvLogo} alt="Alessandro Bravi ianBrv" />
+                  <img
+                    loading="lazy"
+                    preload="auto"
+                    src={IanBrvLogo}
+                    alt="Alessandro Bravi ianBrv"
+                  />
                 </div>
                 <p>{new Date().getFullYear()}</p>
               </div>

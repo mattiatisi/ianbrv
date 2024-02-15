@@ -158,6 +158,11 @@ video {
   clip-path: unset;
 }
 
+.aspect-ratio {
+  aspect-ratio: 16/9;
+  clip-path: inset (10px 10px);
+}
+
 .active {
   color: var(--main-color);
 }
@@ -369,9 +374,6 @@ footer {
 
   .small-gap {
     gap: 2vh;
-  }
-  video {
-    clip-path: inset(18px 18px);
   }
 }
 

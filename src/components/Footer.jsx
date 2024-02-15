@@ -3,11 +3,13 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { useMediaQueries } from "../hooks/getWindowSize";
 import IanBrvLogo from "../assets/ianbrv-logo.webp";
+import useMediaSize from "../hooks/useMediaSize";
 
 export default function Footer() {
   const { pathname } = useLocation();
   const { isDesktopOrLaptop } = useMediaQueries();
   const isProjectsPage = pathname === "/projects";
+  const { width, height } = useMediaSize();
 
   return (
     <>
@@ -16,6 +18,8 @@ export default function Footer() {
           <div className="flex-col">
             <div className="logo-text">
               <img
+                loading="lazy"
+                preload="auto"
                 className={isProjectsPage ? "mix-blend-image" : ""}
                 src={IanBrvLogo}
                 alt="Alessandro Bravi ianBrv"

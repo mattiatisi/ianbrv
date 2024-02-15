@@ -8,6 +8,8 @@ import "../App.css";
 import VideoHomeWEB from "../assets/Alessandro Bravi Portfolio WEB.webm";
 import VideoHomeMP4 from "../assets/Alessandro Bravi Portfolio MP4.mp4";
 import PosterImg from "../assets/Alessandro Bravi Portfolio Poster.jpg";
+
+import PosterImgWeb from "../assets/Alessandro Bravi Portfolio Poster.webp";
 import Footer from "./Footer";
 
 export default function Home() {
@@ -27,11 +29,12 @@ export default function Home() {
                   width={width}
                   height={height}
                   playsInline
-                  preload="auto"
+                  loading="lazy"
                   autoPlay
                   muted
                   loop
-                  poster={PosterImg}
+                  poster={PosterImgWeb}
+                  alt="Alessandro Bravi Video Home"
                 >
                   <source src={VideoHomeWEB} type="video/webm" />
                   <source src={VideoHomeMP4} type="video/mp4" />
@@ -48,11 +51,13 @@ export default function Home() {
                 <video
                   className="full-height-video"
                   playsInline
+                  loading="lazy"
                   preload="auto"
                   autoPlay
                   muted
                   loop
-                  poster={PosterImg}
+                  poster={PosterImgWeb}
+                  alt="Alessandro Bravi Video Home"
                 >
                   <source src={VideoHomeWEB} type="video/webm" />
                   <source src={VideoHomeMP4} type="video/mp4" />

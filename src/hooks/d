@@ -1,0 +1,105 @@
+import React, { useState } from "react";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { AdvancedVideo, lazyload } from "@cloudinary/react";
+
+const ProjectsList = () => {
+  const [exampleItems] = useState([
+    {
+      id: 1,
+      name: "Item 1",
+      urlVideo: "project1",
+      posterImg: "project1thumb",
+    },
+    {
+      id: 2,
+      name: "Item 2",
+      urlVideo: "project2",
+      posterImg: "project2thumb",
+    },
+    {
+      id: 3,
+      name: "Item 3",
+      urlVideo: "project3",
+      posterImg: "project3thumb",
+    },
+    {
+      id: 4,
+      name: "Item 1",
+      urlVideo: "project1",
+      posterImg: "project1thumb",
+    },
+    {
+      id: 5,
+      name: "Item 2",
+      urlVideo: "project2",
+      posterImg: "project2thumb",
+    },
+    {
+      id: 6,
+      name: "Item 3",
+      urlVideo: "project3",
+      posterImg: "project3thumb",
+    },
+  ]);
+
+  return (
+    <ul className="flex-column">
+      {exampleItems.map((item) => (
+        <ListItem key={item.id} item={item} />
+      ))}
+    </ul>
+  );
+};
+
+const ListItem = ({ item }) => {
+  return (
+    <li className="delete-margin">
+      {item.urlImage ? (
+        <img
+          src={item.urlImage}
+          alt={item.name}
+          loading="lazy"
+          preload="auto"
+        />
+      ) : (
+        <div className="placeholder-image">{item.urlImage}</div>
+      )}
+      {item.urlVideo && <VideoPlayer item={item} />}
+    </li>
+  );
+};
+
+const VideoPlayer = ({ item }) => {
+  const cld = new Cloudinary({ cloud: { cloudName: "dpoyg70ye" } });
+
+  return (
+    <div className="video-container">
+      <div className="video-wrapper">
+        <AdvancedVideo
+          className="aspect-ratio"
+          loading="lazy"
+          preload="auto"
+          playsInline
+          autoPlay
+          loop
+          muted
+          alt={item.name}
+          cldVid={cld
+            .video(item.urlVideo)
+            .delivery("q_auto")
+            .format("auto")
+            .quality("auto")}
+          poster={cld
+            .image(item.posterImg)
+            .setAssetType("video")
+            .delivery("q_auto")
+            .format("auto:image")
+            .toURL()}
+          plugins={[lazyload()]}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default ProjectsList;
