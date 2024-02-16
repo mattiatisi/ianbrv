@@ -45,5 +45,8 @@
   "main": "server.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "netlify-cli": "^17.16.2"
+  }
 }
